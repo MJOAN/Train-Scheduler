@@ -1,10 +1,13 @@
+
+
+
   var config = {
-      apiKey: "AIzaSyAjMzb9YuW_Jbm9Y5-mV34T5_YPOSpxxzQ",
-      authDomain: "train-scheduler-7e4a1.firebaseapp.com",
-      databaseURL: "https://train-scheduler-7e4a1.firebaseio.com",
-      projectId: "train-scheduler-7e4a1",
-      storageBucket: "",
-      messagingSenderId: "728452940852"
+    apiKey: "AIzaSyAjMzb9YuW_Jbm9Y5-mV34T5_YPOSpxxzQ",
+    authDomain: "train-scheduler-7e4a1.firebaseapp.com",
+    databaseURL: "https://train-scheduler-7e4a1.firebaseio.com",
+    projectId: "train-scheduler-7e4a1",
+    storageBucket: "train-scheduler-7e4a1.appspot.com",
+    messagingSenderId: "728452940852"
   };
 
   firebase.initializeApp(config);
