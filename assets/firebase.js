@@ -1,25 +1,25 @@
   var config = {
-    apiKey: "AIzaSyAjMzb9YuW_Jbm9Y5-mV34T5_YPOSpxxzQ",
-    authDomain: "train-scheduler-7e4a1.firebaseapp.com",
-    databaseURL: "https://train-scheduler-7e4a1.firebaseio.com",
-    projectId: "train-scheduler-7e4a1",
-    storageBucket: "",
-    messagingSenderId: "728452940852"
+      apiKey: "AIzaSyAjMzb9YuW_Jbm9Y5-mV34T5_YPOSpxxzQ",
+      authDomain: "train-scheduler-7e4a1.firebaseapp.com",
+      databaseURL: "https://train-scheduler-7e4a1.firebaseio.com",
+      projectId: "train-scheduler-7e4a1",
+      storageBucket: "",
+      messagingSenderId: "728452940852"
   };
 
   firebase.initializeApp(config);
 
-    var database = firebase.database();
+  var database = firebase.database();
 
-    var trainName = "";
-    var destinationCity = "";
-    var firstTrain = "";
-    var timedFrequency = "";
-    var nextArrival = "";
-    var minutesAway = "";
+  var trainName = "";
+  var destinationCity = "";
+  var firstTrain = "";
+  var timedFrequency = "";
+  var nextArrival = "";
+  var minutesAway = "";
 
 
-    $("#add-train").on("click", function(event) {
+  $("#add-train").on("click", function(event) {
       event.preventDefault();
 
       trainName = $("#train-name").val().trim();
@@ -28,10 +28,10 @@
       timedFrequency = $("#frequency").val().trim();
 
       var trainData = {
-        name: trainName,
-        destination: destinationCity,
-        time: firstTrain,
-        frequency: timedFrequency
+          name: trainName,
+          destination: destinationCity,
+          time: firstTrain,
+          frequency: timedFrequency
       };
 
       database.ref().push(trainData);
@@ -45,9 +45,11 @@
       $("#destination").val("");
       $("#first-train").val("");
       $("#frequency").val("");
-      });
- 
-    database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+  });
+
+
+
+  database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
       console.log(childSnapshot.val().name);
       console.log(childSnapshot.val().destination);
@@ -73,14 +75,12 @@
 
       var nextArrival = moment().add(minutesAway, "minutes");
       console.log("Next Train Arrival Time: " + moment(nextArrival).format("HH:mm"));
-        
 
-    $("#table > tbody").append(("<tr><td>" + trainName + "</td><td>" + destinationCity + "</td><td>" +
-    timedFrequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td><td>"));
-    });
 
-    }, function(errorObject) {
-      console.log("The read failed: " + errorObject.code);
-    };
+      $("#table > tbody").append(("<tr><td>" + trainName + "</td><td>" + destinationCity + "</td><td>" +
+          timedFrequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td><td>"));
+  });
 
-    
+/*  function(error) {
+      console.log("The read failed: " + error.code);
+  };*/
