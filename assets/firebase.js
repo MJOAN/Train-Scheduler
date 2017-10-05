@@ -1,6 +1,3 @@
-
-
-
   var config = {
     apiKey: "AIzaSyAjMzb9YuW_Jbm9Y5-mV34T5_YPOSpxxzQ",
     authDomain: "train-scheduler-7e4a1.firebaseapp.com",
@@ -78,7 +75,6 @@
 
       var nextArrival = moment().add(minutesAway, "minutes");
       console.log("Next Train Arrival Time: " + moment(nextArrival).format("HH:mm"));
-
 
       $("#table > tbody").append(("<tr><td>" + trainName + "</td><td>" + destinationCity + "</td><td>" +
           timedFrequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td><td>"));
