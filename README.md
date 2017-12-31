@@ -8,6 +8,8 @@
 In this assignment, you'll create a train schedule application that incorporates Firebase to host arrival and departure data. Your app will retrieve and manipulate this information with Moment.js. This website will provide up-to-date information about various trains, namely their arrival times and how many minutes remain until they arrive at their station.
 
 - - -
+![train homework](screenshot5.png)
+
 
 ### Setup
 
@@ -16,26 +18,20 @@ In this assignment, you'll create a train schedule application that incorporates
 ### Instructions
 
 * Make sure that your app suits this basic spec:
-  
   * When adding trains, administrators should be able to submit the following:
-    
     * Train Name
-    
     * Destination 
-    
     * First Train Time -- in military time
-    
     * Frequency -- in minutes
   
   * Code this app to calculate when the next train will arrive; this should be relative to the current time.
-  
   * Users from many different machines must be able to view same train times.
-  
   * Styling and theme are completely up to you. Get Creative!
 
 ### Example Site
 
-![train homework](Train_Time_Image.png)
+![train homework](screenshot1.png)
+![train homework](screenshot2.png)
 
 ### Bonus (Extra Challenges)
 
@@ -47,17 +43,9 @@ In this assignment, you'll create a train schedule application that incorporates
 
 - - -
 
-### Minimum Requirements
+![train homework](screenshot3.png)
+![train homework](screenshot4.png)
 
-Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed.
-
-- - -
-
-### One More Thing
-
-If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
-
-**Good Luck!**
 
 ## Copyright
 

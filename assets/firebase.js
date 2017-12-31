@@ -1,3 +1,5 @@
+
+  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAjMzb9YuW_Jbm9Y5-mV34T5_YPOSpxxzQ",
     authDomain: "train-scheduler-7e4a1.firebaseapp.com",
@@ -6,23 +8,22 @@
     storageBucket: "train-scheduler-7e4a1.appspot.com",
     messagingSenderId: "728452940852"
   };
-
   firebase.initializeApp(config);
+
 
   var database = firebase.database();
 
   var trainName = "";
   var destinationCity = "";
   var firstTrain = "";
-  var timedFrequency = "";
+  var timedFrequency = 5;
   var nextArrival = "";
   var minutesAway = "";
-
 
   $("#add-train").on("click", function(event) {
       event.preventDefault();
 
-      trainName = $("#train-name").val().trim();
+      trainName = $("#train").val().trim();
       destinationCity = $("#destination").val().trim();
       firstTrain = $("#first-train").val().trim();
       timedFrequency = $("#frequency").val().trim();
@@ -41,13 +42,13 @@
       console.log(trainData.time);
       console.log(trainData.frequency);
 
-      $("#train-name").val("");
+      alert("Train successfully added");
+
+      $("#train").val("");
       $("#destination").val("");
       $("#first-train").val("");
       $("#frequency").val("");
   });
-
-
 
   database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
@@ -76,10 +77,10 @@
       var nextArrival = moment().add(minutesAway, "minutes");
       console.log("Next Train Arrival Time: " + moment(nextArrival).format("HH:mm"));
 
-      $("#table > tbody").append(("<tr><td>" + trainName + "</td><td>" + destinationCity + "</td><td>" +
+      $("#train-table > tbody").append(("<tr><td>" + trainName + "</td><td>" + destinationCity + "</td><td>" +
           timedFrequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td><td>"));
   });
 
 /*  function(error) {
-      console.log("The read failed: " + error.code);
-  };*/
+        console.log("The read failed: " + error.code);
+    };*/
