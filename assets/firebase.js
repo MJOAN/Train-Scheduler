@@ -62,19 +62,21 @@
       var firstTrain = childSnapshot.val().time;
       var timedFrequency = childSnapshot.val().frequency;
 
-      var currentTime = moment();
+      var timeArr = firstTrain.split(":");
+
+      var currentTime = moment().hours(timeArr[0]).minutes(timeArr[1]);
       console.log("Local Current Time: " + moment(currentTime).format("HH:mm"));
 
       var timeDifference = moment().diff(moment(currentTime), "minutes");
       console.log("Time Difference from Current Time to Next Train: " + timeDifference);
 
       var timeRemaining = timeDifference % timedFrequency;
-      console.log(timeRemaining);
+      console.log("Time Remaining until Next Train: ", timeRemaining);
 
       var minutesAway = timedFrequency - timeRemaining;
       console.log("Minutes Away from Next Arrival: " + minutesAway);
 
-      var nextArrival = moment().add(minutesAway, "minutes");
+      var nextArrival = moment().add(minutesAway, "m").format("hh:mm A");;
       console.log("Next Train Arrival Time: " + moment(nextArrival).format("HH:mm"));
 
       $("#train-table > tbody").append(("<tr><td>" + trainName + "</td><td>" + destinationCity + "</td><td>" +
