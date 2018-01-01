@@ -1,14 +1,11 @@
 # Train-Scheduler
-# Firebase Assignment - Train Scheduler (Basic - Recommended)
-
-##### _Because that Rock Paper Scissors Game is Too Damn Hard_
+# Firebase Assignment
 
 ### Overview
 
 In this assignment, you'll create a train schedule application that incorporates Firebase to host arrival and departure data. Your app will retrieve and manipulate this information with Moment.js. This website will provide up-to-date information about various trains, namely their arrival times and how many minutes remain until they arrive at their station.
 
-- - -
-![train homework](screenshot5.png)
+![train screenshot](screenshot5.png)
 
 
 ### Setup
@@ -30,8 +27,8 @@ In this assignment, you'll create a train schedule application that incorporates
 
 ### Example Site
 
-![train homework](screenshot1.png)
-![train homework](screenshot2.png)
+![train](screenshot1.png)
+![train](screenshot2.png)
 
 ### Bonus (Extra Challenges)
 
@@ -41,7 +38,6 @@ In this assignment, you'll create a train schedule application that incorporates
 
 * As a final challenge, make it so that only users who log into the site with their Google or GitHub accounts can use your site. You'll need to read up on Firebase authentication for this bonus exercise.
 
-- - -
 
 ![train homework](screenshot3.png)
 ![train homework](screenshot4.png)
